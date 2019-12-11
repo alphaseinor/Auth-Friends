@@ -20,7 +20,9 @@ const Navigation = () => {
           Logout
         </div>
       ):(
-        <div>
+        <div
+          className="logoutButton"
+        >
           Logging Out
         </div>
       )}

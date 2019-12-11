@@ -37,7 +37,9 @@ function Login (props) {
           <Redirect to='/friendlist' />      
         ):( 
         <>
-          <h3>Login</h3>
+          <h3 
+            className="login"
+          >Login</h3>
           <form onSubmit = {onSubmit}>
             <input 
                 type = 'text'

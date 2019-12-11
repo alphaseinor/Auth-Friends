@@ -35,10 +35,10 @@ const AddFriend = () => {
     <article
       className="friendCard"
     >
+      <h3>Add Friend</h3>
       <form
         onSubmit={e=>handleSubmit(e)}
       >
-        <h3>Add Friend</h3>
         <input
           type="text"
           name="name"
