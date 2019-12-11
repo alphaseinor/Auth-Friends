@@ -10,25 +10,18 @@ const Navigation = () => {
     setAccess(false)
     window.location.href='/'
   }
-
-
-
   return(
     <div>
       {access?(
-        <>
-          <div
-            onClick={()=>logout()}
-          >
-            Logout
-          </div>
-        </>
+        <div
+          onClick={()=>logout()}
+        >
+          Logout
+        </div>
       ):(
-        <>
-          <div>
-            Login
-          </div>
-        </>
+        <div>
+          Login
+        </div>
       )}
     </div>
   )

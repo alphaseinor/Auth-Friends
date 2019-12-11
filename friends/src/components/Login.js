@@ -32,28 +32,33 @@ function Login (props) {
 
   return (
     <>
-      {localStorage.getItem('token')?(
-        <Redirect to='/friendlist' />      
-      ):( 
-        <form onSubmit = {onSubmit}>
-          <input 
-              type = 'text'
-              name = 'username'
-              placeholder = 'Username'
-              value = {credentials.username}
-              onChange = {handleChange}
-              />
-              <br></br>
-          <input 
-              type = 'password'
-              name = 'password'
-              placeholder = 'Password'
-              value = {credentials.password}
-              onChange = {handleChange}
-              />
-              <br></br>
-          <button> Log In </button>
-        </form>)
+      {
+        localStorage.getItem('token')?(
+          <Redirect to='/friendlist' />      
+        ):( 
+        <>
+          <h3>Login</h3>
+          <form onSubmit = {onSubmit}>
+            <input 
+                type = 'text'
+                name = 'username'
+                placeholder = 'Username'
+                value = {credentials.username}
+                onChange = {handleChange}
+                />
+                <br></br>
+            <input 
+                type = 'password'
+                name = 'password'
+                placeholder = 'Password'
+                value = {credentials.password}
+                onChange = {handleChange}
+                />
+                <br></br>
+            <button> Log In </button>
+          </form>
+        </>
+        )
       }
   </>
   )
