@@ -8,12 +8,14 @@ import PrivateRoute from './components/PrivateRoute.js'
 function App() {
   return (
     <Router>
-      <Login />
-      <FriendList />
-      <Switch>
-        <PrivateRoute exact path = 'friendlist' component = {FriendList} />
-        <Route component = {Login} />
-      </Switch>
+      <section className="app-container">
+        <Login />
+        <FriendList />
+        <Switch>
+          <PrivateRoute exact path = 'friendlist' component = {FriendList} />
+          <Route component = {Login} />
+        </Switch>
+      </section>
     </Router>
   )
 }
