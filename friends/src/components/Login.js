@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axiosWithAuth from '../utils/axiosWithAuth'
+import {Redirect} from 'react-router-dom'
 
 function Login (props) {
   const [credentials, setCredentials] = useState 
@@ -31,25 +32,29 @@ function Login (props) {
 
   return (
     <>
-    <form onSubmit = {onSubmit}>
-      <input 
-          type = 'text'
-          name = 'username'
-          placeholder = 'Username'
-          value = {credentials.username}
-          onChange = {handleChange}
-          />
-          <br></br>
-      <input 
-          type = 'password'
-          name = 'password'
-          placeholder = 'Password'
-          value = {credentials.password}
-          onChange = {handleChange}
-          />
-          <br></br>
-      <button> Log In </button>
-    </form>
+      {localStorage.getItem('token')?(
+        <Redirect to='/friendlist' />      
+      ):( 
+        <form onSubmit = {onSubmit}>
+          <input 
+              type = 'text'
+              name = 'username'
+              placeholder = 'Username'
+              value = {credentials.username}
+              onChange = {handleChange}
+              />
+              <br></br>
+          <input 
+              type = 'password'
+              name = 'password'
+              placeholder = 'Password'
+              value = {credentials.password}
+              onChange = {handleChange}
+              />
+              <br></br>
+          <button> Log In </button>
+        </form>)
+      }
   </>
   )
 }
