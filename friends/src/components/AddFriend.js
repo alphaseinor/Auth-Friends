@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import axiosWithAuto from '../utils/axiosWithAuth.js'
+import axiosWithAuth from '../utils/axiosWithAuth.js'
 import {v1} from 'uuid'
 
 const AddFriend = () => {
@@ -19,7 +19,16 @@ const AddFriend = () => {
   }
 
   const handleSubmit = event => {
-    
+    event.preventDefault()
+    axiosWithAuth()
+    .post('http://localhost:5000/api/friends', friend)
+    .then(result => {
+      console.log(result)
+      window.location.href='/'
+    })
+    .catch(err=>{
+      console.log(err)
+    })
   }
 
   return(
