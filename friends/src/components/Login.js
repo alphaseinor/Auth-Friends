@@ -46,7 +46,6 @@ function Login (props) {
                 value = {credentials.username}
                 onChange = {handleChange}
                 />
-                <br></br>
             <input 
                 type = 'password'
                 name = 'password'
@@ -54,7 +53,6 @@ function Login (props) {
                 value = {credentials.password}
                 onChange = {handleChange}
                 />
-                <br></br>
             <button> Log In </button>
           </form>
         </>

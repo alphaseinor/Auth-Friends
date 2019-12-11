@@ -14,13 +14,14 @@ const Navigation = () => {
     <div>
       {access?(
         <div
+          className="logoutButton"
           onClick={()=>logout()}
         >
           Logout
         </div>
       ):(
         <div>
-          Login
+          Logging Out
         </div>
       )}
     </div>
