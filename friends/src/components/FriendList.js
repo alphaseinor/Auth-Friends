@@ -3,7 +3,7 @@ import axiosWithAuth from '../utils/axiosWithAuth.js'
 import FriendCard from './FriendCard.js'
 
 
-const FriendList = (props) => {
+const FriendList = () => {
   const [friend, setFriend] = useState([])
   useEffect(()=>{
     axiosWithAuth().get('http://localhost:5000/api/friends')
