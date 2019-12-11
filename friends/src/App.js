@@ -11,8 +11,8 @@ function App() {
     <Router>
       <section className="app-container">
         <Switch>
-          <PrivateRoute exact path = 'friendlist' component = {FriendList} />
-          <Route component = {Login} />
+          <PrivateRoute exact path='friendlist' component={FriendList} />
+          <Route component={Login} />
         </Switch>
       </section>
     </Router>

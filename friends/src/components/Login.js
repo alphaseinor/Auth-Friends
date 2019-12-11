@@ -21,7 +21,7 @@ function Login (props) {
     axiosWithAuth()
     .post('/login', credentials)
     .then (result => {
-      console.log('axios post', result.data.payload)
+      console.log('axios post', result)
       localStorage.setItem('token', result.data.payload)
       props.history.push('/friendlist')
     })
