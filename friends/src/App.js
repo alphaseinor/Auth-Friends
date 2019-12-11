@@ -2,9 +2,8 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Login from './components/Login.js'
-import FriendList from './components/FriendList'
+import FriendList from './components/FriendList.js'
 import PrivateRoute from './components/PrivateRoute.js'
-
 
 function App() {
   return (

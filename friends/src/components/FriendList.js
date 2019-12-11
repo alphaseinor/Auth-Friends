@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axiosWithAuth from '../utils/axiosWithAuth.js'
 import FriendCard from './FriendCard.js'
-
+import Navigation from './Navigation.js'
 
 const FriendList = () => {
   const [friend, setFriend] = useState([])
@@ -17,14 +17,17 @@ const FriendList = () => {
   }, [])
 
   return (
-    <section className="friendContainer">
-      {friend.map(person => (
-          <FriendCard
-            key={person.id}
-            friend={person}
-          />
-        ))}
-    </section>
+    <>
+      <Navigation />
+      <section className="friendContainer">
+        {friend.map(person => (
+            <FriendCard
+              key={person.id}
+              friend={person}
+            />
+          ))}
+      </section>
+    </>
   )
 }
 
