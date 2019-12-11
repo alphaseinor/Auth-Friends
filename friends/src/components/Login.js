@@ -18,13 +18,11 @@ function Login () {
 
   const onSubmit = event => {
     event.preventDefault()
-
     axiosWithAuth()
-    .post('/login', this.state.credentials)
+    .post('/login', credentials)
     .then (result => {
       console.log('axios post', result.data.payload)
       localStorage.setItem('token', result.data.payload)
-      this.props.history.push('/protected')
     })
     .catch(error => 
       console.log(error))
