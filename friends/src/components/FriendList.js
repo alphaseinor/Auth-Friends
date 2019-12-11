@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import axiosWithAuth from '../utils/axiosWithAuth.js'
 
-const FriendList = () => {
+const FriendList = (props) => {
   const [friend, setFriend] = useState([])
- 
+  console.log('FriendList props', props)
   useEffect(()=>{
     axiosWithAuth().get('http://localhost:5000/api/friends')
       .then(result => {
